@@ -1,0 +1,83 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="emdisplay">
+    <meta name="author" content="Andreas Fendt">
+    <link rel="icon" href="">
+
+    <link rel="shortcut icon" href="{% static "emdisplay/img/favicon.ico" %}" type="image/x-icon">
+    <link rel="icon" href="{% static "emdisplay/img/favicon.ico" %}" type="image/x-icon">
+    <title>emdisplay &middot; {% block title %}Default Title{% endblock %}</title>
+
+    <link href="{% static "emdisplay/css/bootstrap.min.css" %}" rel="stylesheet">
+    <link href="{% static "emdisplay/css/theme.css" %}" rel="stylesheet">
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand" href="#">emdisplay</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample07"
+                aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarsExample07">
+            <ul class="navbar-nav mr-auto">
+                {% block nav-home %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url "home-index" %}">Home</a>
+                    </li>
+                {% endblock %}
+                {% block nav-configuration %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url "configuration-index" %}">Configuration</a>
+                    </li>
+                {% endblock %}
+                {% block nav-parsing-templates %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Parsing Templates</a>
+                    </li>
+                {% endblock %}
+                {% block nav-events %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Events</a>
+                    </li>
+                {% endblock %}
+                {% block nav-receiver %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Receiver</a>
+                    </li>
+                {% endblock %}
+                {% block nav-messaging-templates %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Messaging Templates</a>
+                    </li>
+                {% endblock %}
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<main role="main" class="container">
+    {% block content %}
+    {% endblock %}
+</main>
+
+<footer class="footer">
+    <div class="container">
+        <span class="text-muted">Place sticky footer content here.</span>
+    </div>
+</footer>
+
+<script src="{% static "emdisplay/js/jquery.min.js" %}"></script>
+<script src="{% static "emdisplay/js/bootstrap.min.js" %}"></script>
+{% block js_content %}
+{% endblock %}
+</body>
+</html>

@@ -1,7 +1,9 @@
 from django.urls import path
 
-from . import views
+import emdisplay.views.home
+import emdisplay.views.configuration
 
 urlpatterns = [
-    path("", views.index, name="index"),
+    path("", emdisplay.views.home.index, name="home-index"),
+    path("configuration", emdisplay.views.configuration.index, name="configuration-index"),
 ]
