@@ -28,6 +28,7 @@ class ParsingTemplate(models.Model):
     Stored Parsing Templates
     """
 
+    active = models.BooleanField()
     description = models.CharField(max_length=200)
     name = models.CharField(max_length=200, unique=True)
 
@@ -57,7 +58,7 @@ class ParsingTemplateFields(models.Model):
     regex = models.CharField(max_length=200)
 
 
-class Event(models.Model):
+class Fax(models.Model):
     """
     Event
     Stored Events with Image
@@ -65,6 +66,16 @@ class Event(models.Model):
 
     date = models.DateTimeField(unique=True)
     image = models.BinaryField()
+    parsed_text = models.TextField()
+
+
+class Event(models.Model):
+    """
+    Event
+    Stored Events with Image
+    """
+
+    fax = models.ForeignKey(Fax, on_delete=models.CASCADE)
 
 
 class EventDetail(models.Model):
@@ -97,6 +108,7 @@ class Receiver(models.Model):
     User which can receive Messages from the various Plugins
     """
 
+    active = models.BooleanField()
     name = models.CharField(max_length=200, unique=True)
 
 

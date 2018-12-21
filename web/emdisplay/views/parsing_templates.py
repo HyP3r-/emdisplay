@@ -4,7 +4,7 @@ from django.views import View
 
 
 def index(request):
-    return render(request, "emdisplay/configuration.html")
+    return render(request, "emdisplay/parsing_templates.html")
 
 
 class Configuration(View):

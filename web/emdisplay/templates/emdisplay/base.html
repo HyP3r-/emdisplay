@@ -14,6 +14,7 @@
     <title>emdisplay &middot; {% block title %}Default Title{% endblock %}</title>
 
     <link href="{% static "emdisplay/css/bootstrap.min.css" %}" rel="stylesheet">
+    <link href="{% static "emdisplay/css/open-iconic-bootstrap.min.css" %}" rel="stylesheet">
     <link href="{% static "emdisplay/css/theme.css" %}" rel="stylesheet">
 </head>
 
@@ -21,7 +22,10 @@
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
-        <a class="navbar-brand" href="#">emdisplay</a>
+        <a class="navbar-brand" href="{% url "home-index" %}">
+            <span class="oi oi-fire"></span>
+            emdisplay
+        </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample07"
                 aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -31,32 +35,50 @@
             <ul class="navbar-nav mr-auto">
                 {% block nav-home %}
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url "home-index" %}">Home</a>
+                        <a class="nav-link" href="{% url "home-index" %}">
+                            <span class="oi oi-home"></span>
+                            Home
+                        </a>
                     </li>
                 {% endblock %}
                 {% block nav-configuration %}
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url "configuration-index" %}">Configuration</a>
+                        <a class="nav-link" href="{% url "configuration-index" %}">
+                            <span class="oi oi-wrench"></span>
+                            Configuration
+                        </a>
                     </li>
                 {% endblock %}
                 {% block nav-parsing-templates %}
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Parsing Templates</a>
+                        <a class="nav-link" href="{% url "parsing-templates-index" %}">
+                            <span class="oi oi-pencil"></span>
+                            Fax Parsing Templates
+                        </a>
                     </li>
                 {% endblock %}
                 {% block nav-events %}
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Events</a>
+                        <a class="nav-link" href="{% url "events-index" %}">
+                            <span class="oi oi-list"></span>
+                            Events
+                        </a>
                     </li>
                 {% endblock %}
                 {% block nav-receiver %}
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Receiver</a>
+                        <a class="nav-link" href="{% url "receiver-index" %}">
+                            <span class="oi oi-envelope-closed"></span>
+                            Receiver
+                        </a>
                     </li>
                 {% endblock %}
                 {% block nav-messaging-templates %}
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Messaging Templates</a>
+                        <a class="nav-link" href="{% url "messaging-templates-index" %}">
+                            <span class="oi oi-key"></span>
+                            Messaging Templates
+                        </a>
                     </li>
                 {% endblock %}
             </ul>
@@ -70,8 +92,8 @@
 </main>
 
 <footer class="footer">
-    <div class="container">
-        <span class="text-muted">Place sticky footer content here.</span>
+    <div class="container text-right">
+        <span class="text-muted">emdisplay | service status</span>
     </div>
 </footer>
 

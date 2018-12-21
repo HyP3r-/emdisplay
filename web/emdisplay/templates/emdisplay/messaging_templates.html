@@ -1,0 +1,39 @@
+{% extends "emdisplay/base.html" %}
+
+{% block title %}
+    Messaging Templates
+{% endblock %}
+
+{% block nav-messaging-templates %}
+    <li class="nav-item active">
+        <a href="{% url "messaging-templates-index" %}" class="nav-link">
+            <span class="oi oi-key"></span>
+            Messaging Templates
+        </a>
+    </li>
+{% endblock %}
+
+{% block content %}
+    <h2><span class="oi oi-key"></span> Messaging Templates</h2>
+    <hr/>
+
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text">Messaging Templates</span>
+        </div>
+        <select class="form-control">
+            <option>E-Mail</option>
+            <option>SMS</option>
+            <option>WhatsApp</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="exampleFormControlTextarea1">Templates</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+    </div>
+
+    <p class="text-right">
+        <button type="button" class="btn btn-success">Save</button>
+    </p>
+{% endblock %}

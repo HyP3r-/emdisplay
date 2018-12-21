@@ -4,10 +4,10 @@ from django.views import View
 
 
 def index(request):
-    return render(request, "emdisplay/configuration.html")
+    return render(request, "emdisplay/events.html")
 
 
-class Configuration(View):
+class Events(View):
     def get(self, request):
         return JsonResponse({})
 

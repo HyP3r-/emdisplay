@@ -5,22 +5,61 @@
 {% endblock %}
 
 {% block nav-home %}
-    <li class="nav-item active"><a href="{% url "home-index" %}" class="nav-link">Home</a></li>
+    <li class="nav-item active">
+        <a href="{% url "home-index" %}" class="nav-link">
+            <span class="oi oi-home"></span>
+            Home
+        </a>
+    </li>
 {% endblock %}
 
 {% block content %}
+    <h2><span class="oi oi-home"></span> Home</h2>
+    <hr/>
+
     <div class="jumbotron">
         <div class="col-sm-8 mx-auto">
-            <h1>Navbar examples</h1>
-            <p>This example is a quick exercise to illustrate how the navbar and its contents work. Some navbars extend
-                the width of the viewport, others are confined within a <code>.container</code>. For positioning of
-                navbars, checkout the <a href="../navbar-static/">top</a> and <a href="../navbar-fixed/">fixed top</a>
-                examples.</p>
-            <p>At the smallest breakpoint, the collapse plugin is used to hide the links and show a menu button to
-                toggle the collapsed content.</p>
-            <p>
-                <a class="btn btn-primary" href="../../components/navbar/" role="button">View navbar docs &raquo;</a>
-            </p>
+            <h1>
+                <span class="oi oi-fire"></span>
+                emdsiplay
+            </h1>
+            <p>On these pages the system emdisplay can be configured.</p>
+
+            <h3>
+                <span class="oi oi-wrench"></span>
+                Configuration
+            </h3>
+            <p>The basic settings of the system can be made there, such as the directory in which the incoming fax
+                should be searched for or the host name of the SMTP server.</p>
+
+            <h3>
+                <span class="oi oi-pencil"></span>
+                Fax Parsing Templates
+            </h3>
+            <p>With this page you can create and design regular expressions to analyze and parse incoming fax
+                messages.</p>
+
+            <h3>
+                <span class="oi oi-list"></span>
+                Events
+            </h3>
+            <p>This page lists the fax messages that have already been received. If the fax was detected as an alert,
+                the detected detail fields are listed. In addition, the fax can be viewed as an image and how the OCR
+                recognized the fax.</p>
+
+            <h3>
+                <span class="oi oi-envelope-closed"></span>
+                Receiver
+            </h3>
+            <p>There the persons can be managed with name, phone number, e-mail address and so on which can receive
+                messages from system.</p>
+
+            <h3>
+                <span class="oi oi-key"></span>
+                Messaging Templates
+            </h3>
+            <p>On the Messaging Templates page, templates can be managed and edited which are used to notify the
+                individual receiver of the system.</p>
         </div>
     </div>
 {% endblock %}
